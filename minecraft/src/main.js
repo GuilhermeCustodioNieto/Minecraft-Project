@@ -1,6 +1,11 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+import Stats from "three/addons/libs/stats.module.js";
 import { World } from "./world";
+import { createUI } from "./ui";
+
+const stats = new Stats();
+document.body.appendChild(stats.dom);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setPixelRatio(window.devicePixelRatio);
@@ -38,12 +43,11 @@ function setupLights() {
   scene.add(ambient);
 }
 
-function setupWorld(size) {}
-
 // render loop
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  stats.update();
 }
 
 window.addEventListener("resize", () => {
@@ -53,5 +57,5 @@ window.addEventListener("resize", () => {
 });
 
 setupLights();
-setupWorld(32);
+createUI(world);
 animate();
