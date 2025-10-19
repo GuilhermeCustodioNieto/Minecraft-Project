@@ -17,7 +17,7 @@ export class World extends THREE.Group {
     },
   };
 
-  constructor(size = { width: 128, height: 32 }) {
+  constructor(size = { width: 64, height: 32 }) {
     super();
     this.size = size;
   }
@@ -111,6 +111,9 @@ export class World extends THREE.Group {
         );
         mesh.name = blockType.name;
         mesh.count = 0;
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
+
         meshes[blockType.id] = mesh;
       });
 

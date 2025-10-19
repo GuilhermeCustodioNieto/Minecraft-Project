@@ -5,6 +5,8 @@ const textureLoader = new THREE.TextureLoader();
 function loadTexture(path) {
   const texture = textureLoader.load(path);
   texture.colorSpace = THREE.SRGBColorSpace;
+  texture.magFilter = THREE.NearestFilter;
+  texture.minFilter = THREE.NearestFilter;
   return texture;
 }
 
