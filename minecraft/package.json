@@ -1,17 +1,17 @@
 {
-  "name": "minecraft",
+  "name": "minecraft-test-2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host 127.0.0.1",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview --host 127.0.0.1"
   },
   "devDependencies": {
-    "vite": "^7.1.7"
+    "vite": "^4.4.5"
   },
   "dependencies": {
-    "three": "^0.180.0"
+    "three": "^0.156.1"
   }
 }
